@@ -1,0 +1,16 @@
+[Unit]
+Description=My Application Demonstration
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=simon
+WorkingDirectory=/opt/myapp
+ExecStart=/opt/myapp/start.sh
+Restart=on-failure
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
